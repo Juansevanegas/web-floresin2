@@ -4,6 +4,7 @@
 * {
     /* Usamos Montserrat como fuente principal para mejor legibilidad */
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box; /* Añadido para mejor manejo de tamaños */
 }
 
 body {
@@ -13,16 +14,18 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Fondo con gradiente animado en tonos morados */
-    background: linear-gradient(135deg, #4b0082, #8a2be2, #9370db);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+
+    /* --- ✨ AQUÍ ESTÁ EL NUEVO FONDO ✨ --- */
+    /* Usamos más colores para una transición suave y un ángulo que se ve genial con la animación */
+    background: linear-gradient(-45deg, #1d0a2b, #4e1a4f, #a52a78, #d78aae);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
-    color: #fff; /* Texto principal en blanco para que resalte */
-    text-align: center;
-    padding: 20px; /* Espacio para evitar que el texto toque los bordes */
 }
 
-/* Animación para el fondo */
+/* La animación no necesita cambios, funciona perfectamente con el nuevo fondo */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -53,8 +56,7 @@ body {
     }
 }
 
-/* --- IMPORTANTE --- */
-/* Agregamos el retraso de animación para TODAS las letras de "MI CUCHISITA" */
+/* Agregamos el retraso de animación para TODAS las letras */
 .greetings > span:nth-child(2) { animation-delay: .2s; }
 .greetings > span:nth-child(3) { animation-delay: .4s; }
 .greetings > span:nth-child(4) { animation-delay: .6s; }
@@ -75,12 +77,12 @@ body {
 
 /* Estilo del botón y su enlace interno */
 .button button {
-    background-color: #8a2be2; /* Fondo morado que combina */
-    border: 2px solid #dab3ff; /* Borde morado claro para que resalte */
+    background-color: #8a2be2;
+    border: 2px solid #dab3ff;
     padding: 15px 30px;
-    border-radius: 25px; /* Esquinas redondeadas */
+    border-radius: 25px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out; /* Transición suave */
+    transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -88,21 +90,21 @@ body {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ffffff; /* Texto del botón en blanco */
+    color: #ffffff;
 }
 
 /* Efecto al pasar el cursor sobre el botón */
 .button button:hover {
-    background-color: #9932cc; /* Tono de morado más oscuro */
-    transform: scale(1.05); /* Se agranda un poco */
-    box-shadow: 0 0 10px #e0b0ff, 0 0 20px #e0b0ff, 0 0 30px #e0b0ff; /* Efecto de brillo lavanda */
+    background-color: #9932cc;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #e0b0ff, 0 0 20px #e0b0ff, 0 0 30px #e0b0ff;
 }
 
 /* Ajustes para pantallas pequeñas (celulares) */
 @media screen and (max-width:574px) {
     .greetings {
         font-size: 3rem;
-        line-height: 1.2; /* Mejora el espaciado entre líneas si el texto se corta */
+        line-height: 1.2;
     }
     .description {
         font-size: 1rem;
