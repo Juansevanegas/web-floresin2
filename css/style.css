@@ -1,118 +1,100 @@
-/* Importamos fuentes personalizadas para un look más elegante */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap');
-
-* {
-    /* Usamos Montserrat como fuente principal para mejor legibilidad */
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box; /* Añadido para mejor manejo de tamaños */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
 }
-
-body {
+body{
+    color: azure;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-
-    /* --- ✨ AQUÍ ESTÁ EL NUEVO FONDO ✨ --- */
-    /* Usamos más colores para una transición suave y un ángulo que se ve genial con la animación */
-    background: linear-gradient(-45deg, #1d0a2b, #4e1a4f, #a52a78, #d78aae);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    background-color: black;
 }
-
-/* La animación no necesita cambios, funciona perfectamente con el nuevo fondo */
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.greetings {
-    /* Usamos la fuente cursiva y elegante para el saludo principal */
-    font-family: 'Dancing Script', cursive;
+.greetings{
     font-size: 6rem;
-    font-weight: 700;
+    font-weight: 900;
 }
-
-.greetings > span {
-    /* Aplicamos la nueva animación de brillo en tonos lavanda/blanco */
-    animation: purpleGlow 2.5s ease-in-out infinite;
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
 }
-
-/* Nueva animación de brillo morado */
-@keyframes purpleGlow {
-    0%, 100% {
+@keyframes glow{
+    0%, 100%{
         color: #fff;
-        text-shadow: 0 0 12px #e0b0ff, 0 0 50px #e0b0ff, 0 0 100px #e0b0ff;
+        text-shadow: 0 0 12px #fbff00, 0 0 50px #fbff00, 0 0 100px #fbff00;
     }
-    10%, 90% {
-        color: #d8b4fe; /* Un color morado pálido para el estado "apagado" */
+    10%, 90%{
+        color: #696565;
         text-shadow: none;
     }
 }
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
 
-/* Agregamos el retraso de animación para TODAS las letras */
-.greetings > span:nth-child(2) { animation-delay: .2s; }
-.greetings > span:nth-child(3) { animation-delay: .4s; }
-.greetings > span:nth-child(4) { animation-delay: .6s; }
-.greetings > span:nth-child(5) { animation-delay: .8s; }
-.greetings > span:nth-child(6) { animation-delay: 1s; }
-.greetings > span:nth-child(7) { animation-delay: 1.2s; }
-.greetings > span:nth-child(8) { animation-delay: 1.4s; }
-.greetings > span:nth-child(9) { animation-delay: 1.6s; }
-.greetings > span:nth-child(10){ animation-delay: 1.8s; }
-.greetings > span:nth-child(11){ animation-delay: 2s; }
-
-.description {
+.description{
     font-size: 1.5rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    color: #f0e6ff; /* Un color lavanda muy claro para el texto */
+    margin-bottom: 20px;
 }
 
-/* Estilo del botón y su enlace interno */
-.button button {
-    background-color: #8a2be2;
-    border: 2px solid #dab3ff;
-    padding: 15px 30px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.button a {
+.button a{
     text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffffff;
+    font-size: 1rem;
+    color: #111;
 }
 
-/* Efecto al pasar el cursor sobre el botón */
-.button button:hover {
-    background-color: #9932cc;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #e0b0ff, 0 0 20px #e0b0ff, 0 0 30px #e0b0ff;
-}
-
-/* Ajustes para pantallas pequeñas (celulares) */
-@media screen and (max-width:574px) {
-    .greetings {
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
         font-size: 3rem;
-        line-height: 1.2;
+        font-weight: 500;
+        text-align: center;
     }
-    .description {
+    .description{
         font-size: 1rem;
     }
-    .button button {
-        padding: 12px 25px;
-    }
-    .button a {
-        font-size: 1rem;
+    
+    .button a{
+        font-size: .5rem;
     }
 }
+
+.description{
+    color: #fbff00;
+}
+
+/* Estilo para el botón */
+.button button {
+    background-color: yellow; /* Fondo amarillo */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Ajusta el relleno según tu preferencia */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer;
+    position: relative; /* Necesario para el resplandor */
+    border-radius: 20px; /* Esquinas redondeadas */
+    transition: background-color 0.3s ease-in-out; /* Transición suave para el color de fondo */
+  }
+  
+  /* Estilo para el enlace dentro del botón */
+  .button button a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto del botón */
+  }
+  
+  /* Efecto de resplandor al pasar el cursor sobre el botón */
+  .button button:hover {
+    background-color: orange; /* Cambia el color de fondo al pasar el mouse a naranja */
+    box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Efecto de resplandor amarillo */
+  }
+  
+  
